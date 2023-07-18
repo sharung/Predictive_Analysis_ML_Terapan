@@ -21,8 +21,8 @@ maka pembuatan model prediksi analysis karyawan diharapkan dapat meminimalisir k
 - Menganalisis evaluasi metode K-Nearest Neighbors, Random Forest, dan Boosting Algorithm.
 
 # Data Understanding
-Data yang digunakan adalah data yang berasal dari kaggle, data ini berisikan dataset berisi transaksi yang dilakukan oleh HR Department to predict employees Behaviour pada tahun 2021
-
+Data yang digunakan adalah data yang berasal dari kaggle [<em> Hr Analytics Job Prediction</em>](https://www.kaggle.com/datasets/mfaisalqureshi/hr-analytics-and-job-prediction)
+, data ini berisikan dataset berisi transaksi yang dilakukan oleh HR Department to predict employees Behaviour pada tahun 2021.
 ## Variable analysis karyawan
 * Left adalah target data yang merupakan tipe variabel Boolean dan hanya memiliki nilai yang mungkin: 0 berarti karyawan masih bekerja dengan perusahaan, 1 – karyawan keluar dari perusahaan.
 * satisfaction_level - Tingkat kepuasan kerja yang dilaporkan karyawan dalam skala dari 0 hingga 1
@@ -34,3 +34,15 @@ Data yang digunakan adalah data yang berasal dari kaggle, data ini berisikan dat
 * promotion_last_5years - Apakah karyawan dipromosikan atau tidak dalam 5 tahun terakhir (0 – tidak, 1- ya)
 * Department - Departemen karyawan (nilai kategoris)
 * Salary - Gaji karyawan (categorical values – high, medium, low)
+
+Overview Data :
+    
+    - Datasets Name :  U.S. Gasoline and Diesel Retail Prices 1995-2021
+    - Overall Columns:
+        - Valid : 1361
+        - MissMatched : 0
+        - Missing : 0
+    - Source : U.S. Energy Information Administration (Jan 2021)
+    - Link : https://www.eia.gov/dnav/pet/pet_pri_gnd_dcus_nus_w.htm
+    - License : U.S. Government Works
+    - Inspiration : What makes the price of the diesel fluctuate so much?
