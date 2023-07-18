@@ -37,12 +37,11 @@ Data yang digunakan adalah data yang berasal dari kaggle [<em> Hr Analytics Job 
 
 Overview Data :
     
-    - Datasets Name :  U.S. Gasoline and Diesel Retail Prices 1995-2021
+    - Datasets Name : Hr Department to Predict Employees Behaviour 2021
     - Overall Columns:
-        - Valid : 1361
+        - Valid : 14999 
         - MissMatched : 0
         - Missing : 0
     - Source : U.S. Energy Information Administration (Jan 2021)
-    - Link : https://www.eia.gov/dnav/pet/pet_pri_gnd_dcus_nus_w.htm
-    - License : U.S. Government Works
-    - Inspiration : What makes the price of the diesel fluctuate so much?
+    - Link : https://www.kaggle.com/datasets/mfaisalqureshi/hr-analytics-and-job-prediction
+    - License : CC0: Public Domain
