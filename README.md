@@ -21,6 +21,9 @@ maka pembuatan model prediksi analysis karyawan diharapkan dapat meminimalisir k
 - Menganalisis evaluasi metode K-Nearest Neighbors, Random Forest, dan Boosting Algorithm.
 
 # Data Understanding
+Data yang digunakan adalah data yang berasal dari kaggle, data ini berisikan dataset berisi transaksi yang dilakukan oleh HR Department to predict employees Behaviour pada tahun 2021
+
+## Variable analysis karyawan
 * Left adalah target data yang merupakan tipe variabel Boolean dan hanya memiliki nilai yang mungkin: 0 berarti karyawan masih bekerja dengan perusahaan, 1 – karyawan keluar dari perusahaan.
 * satisfaction_level - Tingkat kepuasan kerja yang dilaporkan karyawan dalam skala dari 0 hingga 1
 * last_evaluation - Skor tinjauan kinerja terakhir karyawan juga diskalakan dari 0 hingga 1
