@@ -46,10 +46,29 @@ Data yang digunakan adalah data yang berasal dari kaggle [<em> Hr Analytics Job 
     - Link : https://www.kaggle.com/datasets/mfaisalqureshi/hr-analytics-and-job-prediction
     - License : CC0: Public Domain
 
-# Analisis Predictive
+### Data Preparation
+Pertama muat data csv menggunakan fungsi pandas, masukan dimana lokasi file csv berada. Dari datasets yang digunakan ini terdapat jumlah data pada table sebanyak 10 kolom dan 14999 baris.
 
-Tabel 1. _Describe statistics_
-|Parameters|satisfaction_level | last_evaluation| number_project | average_montly_hours | time_spend_company| work_accident| left         |promotion_last_5years |
+Tabel 1. _Table Data_
+|Index|satisfaction_level|last_evaluation|number_project|average_montly_hours  |time_spend_company  | Work_accident  |left  |	promotion_last_5years|	Department|	salary|
+|-----|------------------|---------------|--------------|----------------------|--------------------|----------------|------|------------------------|------------|-------|
+0     |0.38              |	0.53         |2             |	157                |	3               |	0            |	1   |	0                    |	sales     |	low   |
+1     |0.80              |	0.86         |5             |	262                |	6               |	0            |	1   |	0                    |	sales     |	medium|
+2     |0.11              |	0.88         |7             |	272                |	4               |	0            |	1   |	0                    |	sales     |	medium|
+3     |0.72              |	0.87         |5             |	223                |	5               |	0            |	1   |	0                    |	sales     |	low   |
+4     |0.37              |	0.52         |2             |	159                |	3               |	0            |	1   |	0                    |	sales     |	low   |
+....  |...               |	...          |...           |	...                |	...             |	...          |	... |	...                  |	...       | ...   |
+14994 |0.40              |	0.57         |2             |	151                |	3               |	0            |	  1 |	0                    |	support   |	low   |
+14995 |0.37              |	0.48         |2             |	160                |	3               |	0            |	  1 |	0                    |	support   |	low   |
+14996 |0.37              |	0.53         |2             |	143                |	3               |	0            |	  1 |	0                    |	support   |	low   |
+14997 |0.11              |	0.96         |6             |	280                |	4               |	0            |	  1 |	0                    |	support   |	low   |
+14998 |0.37              |	0.52         |2             |	158                |	3               |	0            |	  1 |	0                    |	support   |	low   |
+
+dataset memiliki 8 fiture numerik yang mempunyai type data _integer_ dan _float_ dan 2 fiture data kategori
+
+### Analisis Predictive
+Tabel 2. _Describe statistics_
+|Parameters|satisfactio    n_level | last_evaluation| number_project | average_montly_hours | time_spend_company| work_accident| left         |promotion_last_5years |
 |----------|-------------------|----------------|----------------|----------------------|-------------------|--------------|--------------|----------------------|
 count      |14999.000000	   |14999.000000	|14999.000000	 |14999.000000	        |14999.000000	    |14999.000000  |14999.000000  |14999.000000          |
 mean	   |0.612834	       |0.716102	    |3.803054	     |201.050337	        |3.498233        	|0.144610	   |0.238083	  |0.021268              |
@@ -81,21 +100,21 @@ Gambar 2 _salary histogram_
 
 dari gambar di atas dapat dilihat bahwa "last_evaluation" tidak ada korelasi dengan left
 
-# Data Preparation
-Pertama muat data csv menggunakan fungsi pandas, masukan dimana lokasi file csv berada. Dari datasets yang digunakan ini terdapat jumlah data pada table sebanyak 10 kolom dan 14999 baris.
+
+# Modeling
+Model yang akan digunakan ada 3 algoritma yaitu K-Nearest Neighbors dan Random Forest. 2 algoritma tersebut akan dievaluasi performa di tahap evaluation untuk menentukan model terbaik.
+   
+    
+### Models
+1. KNN
+2. Random Forest
+
+### Hasil Model
+Table 3. Hasil Model
+| Models             | Train Accuracy | Test Accuracy |
+| ------------------ | -------------- | ------------- |
+| KNN                | 0.999          | 0.999         |
+| Random Forest      | 1.000          | 0.999         |
 
 
-Tabel 2. _Table Data_
-satisfaction_level|last_evaluation|number_project|average_montly_hours|time_spend_company|	Work_accident|	left|	promotion_last_5years|	Department|	salary|
-0.38              |	0.53          |	2            |	157               |	3                |	0            |	1   |	0                    |	sales     |	low   |
-0.80              |	0.86          |	5            |	262               |	6                |	0            |	1   |	0                    |	sales     |	medium|
-0.11              |	0.88          |	7            |	272               |	4                |	0            |	1   |	0                    |	sales     |	medium|
-0.72              |	0.87          |	5            |	223               |	5                |	0            |	1   |	0                    |	sales     |	low   |
-0.37              |	0.52          |	2            |	159               |	3                |	0            |	1   |	0                    |	sales     |	low   |
-...               |	...           |	...          |	...               |	...              |	...          |	... |	...                  |	...       | ...   |
-0.40              |	0.57          |	2            |	151               |	3                |	0            |	  1 |	0                    |	support   |	low   |
-0.37              |	0.48          |	2            |	160               |	3                |	0            |	  1 |	0                    |	support   |	low   |
-0.37              |	0.53          |	2            |	143               |	3                |	0            |	  1 |	0                    |	support   |	low   |
-0.11              |	0.96          |	6            |	280               |	4                |	0            |	  1 |	0                    |	support   |	low   |
-0.37              |	0.52          |	2            |	158               |	3                |	0            |	  1 |	0                    |	support   |	low   |
-
+# Evaluation
