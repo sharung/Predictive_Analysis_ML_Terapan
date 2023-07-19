@@ -23,7 +23,7 @@ maka pembuatan model prediksi analysis karyawan diharapkan dapat meminimalisir k
 # Data Understanding
 Data yang digunakan adalah data yang berasal dari kaggle [<em> Hr Analytics Job Prediction</em>](https://www.kaggle.com/datasets/mfaisalqureshi/hr-analytics-and-job-prediction)
 , data ini berisikan dataset berisi transaksi yang dilakukan oleh HR Department to predict employees Behaviour pada tahun 2021.
-## Variable analysis karyawan
+### Variable analysis karyawan
 * Left adalah target data yang merupakan tipe variabel Boolean dan hanya memiliki nilai yang mungkin: 0 berarti karyawan masih bekerja dengan perusahaan, 1 – karyawan keluar dari perusahaan.
 * satisfaction_level - Tingkat kepuasan kerja yang dilaporkan karyawan dalam skala dari 0 hingga 1
 * last_evaluation - Skor tinjauan kinerja terakhir karyawan juga diskalakan dari 0 hingga 1
@@ -35,7 +35,7 @@ Data yang digunakan adalah data yang berasal dari kaggle [<em> Hr Analytics Job 
 * Department - Departemen karyawan (nilai kategoris)
 * Salary - Gaji karyawan (categorical values – high, medium, low)
 
-Overview Data :
+### Overview Data :
     
     - Datasets Name : Hr Department to Predict Employees Behaviour 2021
     - Overall Columns:
@@ -48,6 +48,7 @@ Overview Data :
 
 # Analisis Predictive
 
+Tabel 1. _Describe statistics_
 |Parameters|satisfaction_level | last_evaluation| number_project | average_montly_hours | time_spend_company| work_accident| left         |promotion_last_5years |
 |----------|-------------------|----------------|----------------|----------------------|-------------------|--------------|--------------|----------------------|
 count      |14999.000000	   |14999.000000	|14999.000000	 |14999.000000	        |14999.000000	    |14999.000000  |14999.000000  |14999.000000          |
@@ -66,20 +67,35 @@ max	       |1.000000	       |1.000000	    |7.000000	     |310.000000	        |10
   - kecelakaan dalam bekerja hampir tidak pernah terjadi
   - jumlah waktu bekerja dari 2 sampai 10 jam
 
-# Visualisasi
-Gambar 1 adalah grafik distribusi antara statisfaction level dan salary terhadap left 
+### Visualisasi
+Gambar 1 adalah grafik distribusi antara _statisfaction level_ dan _salary_ terhadap _left_
 ![image](https://github.com/sharung/Predictive_Analysis_ML_Terapan/assets/76006507/f6f13265-12f3-483e-bf6d-35cb2cc18930)
-gambar 1 grafik distribusi
+gambar 1 _grafik distribusi_
 
     - satisfaction by salary untuk menampilkan distribusi antara satisfaction level dan salary
     - salary history membuat perbandingan antara pegawai yang bertahan dan tidak
 
-Gambar 2 adalah salary histogram dari data karyawan left
+Gambar 2 adalah _salary_ histogram dari data karyawan left
 ![image](https://github.com/sharung/Predictive_Analysis_ML_Terapan/assets/76006507/dc5e07a6-8f64-456c-8058-63c033664c3f)
-Gambar 2 salary histogram
+Gambar 2 _salary histogram_
 
 dari gambar di atas dapat dilihat bahwa "last_evaluation" tidak ada korelasi dengan left
 
 # Data Preparation
+Pertama muat data csv menggunakan fungsi pandas, masukan dimana lokasi file csv berada. Dari datasets yang digunakan ini terdapat jumlah data pada table sebanyak 10 kolom dan 14999 baris.
 
+
+Tabel 2. _Table Data_
+satisfaction_level|last_evaluation|number_project|average_montly_hours|time_spend_company|	Work_accident|	left|	promotion_last_5years|	Department|	salary|
+0.38              |	0.53          |	2            |	157               |	3                |	0            |	1   |	0                    |	sales     |	low   |
+0.80              |	0.86          |	5            |	262               |	6                |	0            |	1   |	0                    |	sales     |	medium|
+0.11              |	0.88          |	7            |	272               |	4                |	0            |	1   |	0                    |	sales     |	medium|
+0.72              |	0.87          |	5            |	223               |	5                |	0            |	1   |	0                    |	sales     |	low   |
+0.37              |	0.52          |	2            |	159               |	3                |	0            |	1   |	0                    |	sales     |	low   |
+...               |	...           |	...          |	...               |	...              |	...          |	... |	...                  |	...       | ...   |
+0.40              |	0.57          |	2            |	151               |	3                |	0            |	  1 |	0                    |	support   |	low   |
+0.37              |	0.48          |	2            |	160               |	3                |	0            |	  1 |	0                    |	support   |	low   |
+0.37              |	0.53          |	2            |	143               |	3                |	0            |	  1 |	0                    |	support   |	low   |
+0.11              |	0.96          |	6            |	280               |	4                |	0            |	  1 |	0                    |	support   |	low   |
+0.37              |	0.52          |	2            |	158               |	3                |	0            |	  1 |	0                    |	support   |	low   |
 
