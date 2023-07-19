@@ -112,7 +112,7 @@ dari gambar di atas dapat dilihat bahwa "last_evaluation" tidak ada korelasi den
 
 
 # Modeling
-Model yang akan digunakan ada 3 algoritma yaitu K-Nearest Neighbors, Random Forest dan Logistic Regression. 3 algoritma tersebut akan dievaluasi performa di tahap evaluation untuk menentukan model terbaik.
+Model yang akan digunakan ada 2 algoritma yaitu K-Nearest Neighbors dan Random Forest. 2 algoritma tersebut akan dievaluasi performa di tahap evaluation untuk menentukan model terbaik.
    
     
 ### Models
@@ -129,7 +129,7 @@ maupun dekatnya data pembelajaran (*neighbor*) tersebut dihitung dengan jarak Eu
         * Perlu penskalaan fitur
         * Sensitif terhadap noise data, missing values dan outliers
     * Parameter
-        n_neighbors = 5
+        n_neighbors = 7
         
               
 2. Random Forest  adalah algoritma machine learning yang menggabungkan keluaran dari beberapa decision tree untuk mencapai satu hasil. [1]
@@ -150,7 +150,6 @@ maupun dekatnya data pembelajaran (*neighbor*) tersebut dihitung dengan jarak Eu
     * Algoritma Random Forest:
       ![image](https://github.com/sharung/Predictive_Analysis_ML_Terapan/assets/76006507/7f561ecb-e0bd-4a41-a91d-fcf2138508c5)
 
-4. Logistic Regression
 
 ### Hasil Model
 
@@ -159,37 +158,34 @@ Table 3. Hasil Model
 | ------------------ | -------------- | -------------      |
 | KNN                |0.9734260405752929|0.9611111111111111|
 | Random Forest      |0.9994285170016192|0.9902222222222222|
-| Logistic Regression|0.7882655490999143|0.7944444444444444|
 
 
 
 # Evaluation
 Model yang digunakan adalah model regressi, sesuai penjelasan diatas saya akan menggunakan beberapa metric untuk evaluasi, berikut adalah list nya:
 
-1. Mean Squared Error (MSE)
-2. Root Mean Squared Error (RMSE)
-3. Confussion Matrix
+## 1. Mean Squared Error (MSE)
+   Mean Squared Error (MSE) adalah Rata-rata Kesalahan kuadrat diantara nilai aktual dan nilai prediksi. Metode Mean Squared Error secara umum digunakan untuk mengecek estimasi berapa nilai kesalahan pada prediksi. Nilai Mean Squared Error yang rendah atau nilai mean squared error mendekati nol menunjukkan bahwa hasil prediksi sesuai dengan data aktual dan bisa dijadikan untuk perhitungan prediksi di periode mendatang.
+   
+## 2. Root Mean Squared Error (RMSE)
+   Root Mean Squared Error (RMSE) adalah salah satu cara untuk mengevaluasi model regresi dengan mengukur tingkat akurasi hasil perkiraan suatu model. RMSE dihitung dengan mengkuadratkan error (prediksi – observasi) dibagi dengan jumlah data (= rata-rata), lalu diakarkan.
+   
+## 3. Confussion Matrix
     Menghitung hasil kinerja klasifikasi dari masing-masing pengujian metode dengan Confusion Matrix untuk memperoleh hasil Accuracy, Precision, dan Recall. Confusion Matrixidigunakan untuk imenganalisisiseberapa baik classifier mengenali data kelas yang berbeda[7]
 
-## Mean Squared Error (MSE)
-## Root Mean Squared Error (RMSE)
-## Confussion Matrix
-
-
 # Final Report
+Setelah melalui berbagai tahapan evaluasi diputuskan bahwa model terbaik yang akan digunakan adalah Gradient Boostinf sesuai dengan perhitungan matrix yang telah dijabarkan diatas. Berikut hasil akhir dari 2 Model terbaik.
+
+Table 4. Final Result
 
 |Index|	Model_Name|	mse     |  	r2        |	rmse     |
 |-----|-----------|---------|-------------|----------|
 0     |	knn	      |0.0388889|	0.7855660 |	0.1972027|
 1     |	RF	      |0.0097778|	0.9460852 |	0.0988826|
-2     |	LR	      |0.2160000|	-0.1910276|	0.4647580|
+
+Dari hasil perbandingan antara 2 algoritma machine learning tersebut, dapat diambil kesimpulan bahwa algoritma yang baik untuk melakukan analisis karyawan ini adalah Random Forest. langkah-langkah ini diharapkan dapat memperkecil tingkat minat keluarnya seorang karyawan.
 
 # Daftar Refrensi
 ### Referensi
-[1] Umri Erdiansyah, Ahmadi Irmansyah Lubis, Kamil Erwansyah. 2022. [Komparasi Metode K-Nearest Neighbor dan Random Forest Dalam Prediksi Akurasi Klasifikasi Pengobatan Penyakit Kutil](http://ejurnal.stmik-budidarma.ac.id/index.php/mib/article/download/3373/2390) . JURNAL MEDIA INFORMATIKA BUDIDARMA. 6O(1):208-214 
-
-[2] 
-
-[3]
-
-[4]
+[1] E. Umri, L. S. Ahmadi, E. Kamil. 2022. [Komparasi Metode K-Nearest Neighbor dan Random Forest Dalam Prediksi Akurasi Klasifikasi Pengobatan Penyakit Kutil](http://ejurnal.stmik-budidarma.ac.id/index.php/mib/article/download/3373/2390) . JURNAL MEDIA INFORMATIKA BUDIDARMA. 6O(1):208-214 
+[2] M. S. LOUIS, B. S. DIAN. 2022. [PERBANDINGAN ALGORITMA KNN, DECISION TREE, *DAN RANDOM*FOREST PADA DATA IMBALANCED CLASS UNTUK KLASIFIKASI PROMOSI KARYAWAN] (https://journal3.uin-alauddin.ac.id/index.php/instek/article/download/31385/15560/). JURNAL INSTAGE. 7(2):191-194
