@@ -12,13 +12,12 @@ maka pembuatan model prediksi analysis karyawan diharapkan dapat meminimalisir k
 # Busness Understanding
 
 ## Problem Statement
-- menyiapkan data sehingga data siap untuk di latih oleh model machine learning?
 - Bagaimana cara menentukan alogritma Machine Learning yang baik untuk mengklafisikasi permasalahan karyawan?
-- Bagaimana penggunaan metode K-Nearest Neighbors, Random Forest, dan Boosting Algorithm?
+- Bagaimana penggunaan metode K-Nearest Neighbors, Random Forest, dan Logistic Regression?
 
 ## Goals
 - Mengetahui algoritma machine learning yang baik dalam mengklasifikasi permasalahan karyawan
-- Menganalisis evaluasi metode K-Nearest Neighbors, Random Forest, dan Boosting Algorithm.
+- Menganalisis evaluasi metode K-Nearest Neighbors, Random Forest, dan Logistic Regression.
 
 # Data Understanding
 Data yang digunakan adalah data yang berasal dari kaggle [<em> Hr Analytics Job Prediction</em>](https://www.kaggle.com/datasets/mfaisalqureshi/hr-analytics-and-job-prediction)
@@ -85,6 +84,17 @@ max	       |1.000000	       |1.000000	    |7.000000	     |310.000000	        |10
   - rata-rata orang yang mengerjakan projek sebanyak 4 projek
   - kecelakaan dalam bekerja hampir tidak pernah terjadi
   - jumlah waktu bekerja dari 2 sampai 10 jam
+ 
+Untuk train test tplit kita bisa menggunakan potongan kode berikut:
+
+```
+from sklearn.model_selection import train_test_split
+
+x = hr_dummy.drop(columns=['left'])
+y = hr_dummy.left
+
+x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.3, random_state= 50)
+```
 
 ### Visualisasi
 Gambar 1 adalah grafik distribusi antara _statisfaction level_ dan _salary_ terhadap _left_
@@ -102,19 +112,55 @@ dari gambar di atas dapat dilihat bahwa "last_evaluation" tidak ada korelasi den
 
 
 # Modeling
-Model yang akan digunakan ada 2 algoritma yaitu K-Nearest Neighbors dan Random Forest. 2 algoritma tersebut akan dievaluasi performa di tahap evaluation untuk menentukan model terbaik.
+Model yang akan digunakan ada 3 algoritma yaitu K-Nearest Neighbors, Random Forest dan Logistic Regression. 3 algoritma tersebut akan dievaluasi performa di tahap evaluation untuk menentukan model terbaik.
    
     
 ### Models
 1. KNN
-2. Random Forest
+    Algoritma*K-Nearest Neighbor* adalah metode*klasifikasi* terhadap suatu dataset berdasarkan jarak data pembelajaran (*neighbor*) terdekat. Jauh 
+maupun dekatnya data pembelajaran (*neighbor*) tersebut dihitung dengan jarak Euclidean. [2]
+    * Kelebihan KNN
+        * Mudah diterapkan
+        * Mudah beradaptasi
+        * Memiliki sedikit hyperparameter
+    * Kekurangan KNN
+        * Tidak berfungsi dengan baik pada dataset berukuran besar
+        * Kurang cocok untuk dimensi tinggi
+        * Perlu penskalaan fitur
+        * Sensitif terhadap noise data, missing values dan outliers
+    * Parameter
+        n_neighbors = 5
+        
+              
+2. Random Forest  adalah algoritma machine learning yang menggabungkan keluaran dari beberapa decision tree untuk mencapai satu hasil. [1]
+    * Kelebihan Algoritma Random Forest
+        - Kuat terhadap data outlier (pencilan data).
+        - Bekerja dengan baik dengan data non-linear.
+        - Risiko overfitting lebih rendah.
+        - Berjalan secara efisien pada kumpulan data yang besar.
+        - Akurasi yang lebih baik daripada algoritma klasifikasi lainnya.
+   * Kekurangan Algoritma Random Forest
+        - Random Forest cenderung bias saat berhadapan dengan variabel kategorikal.
+        - Waktu komputasi pada dataset berskala besar relatif lambat
+        - Tidak cocok untuk metode linier dengan banyak fitur sparse
+   * Parameter
+        * n_estimator = 100
+        * max_depth = Infinite / None (node diperluas sampai semua semua daun kurang dari sampel)
+        * n_jobs = -1
+    * Algoritma Random Forest:
+      ![image](https://github.com/sharung/Predictive_Analysis_ML_Terapan/assets/76006507/7f561ecb-e0bd-4a41-a91d-fcf2138508c5)
+
+4. Logistic Regression
 
 ### Hasil Model
+
 Table 3. Hasil Model
-| Models             | Train Accuracy | Test Accuracy |
-| ------------------ | -------------- | ------------- |
-| KNN                | 0.999          | 0.999         |
-| Random Forest      | 1.000          | 0.999         |
+| Models             | Train Accuracy | Test Accuracy      |
+| ------------------ | -------------- | -------------      |
+| KNN                |0.9734260405752929|0.9611111111111111|
+| Random Forest      |0.9994285170016192|0.9902222222222222|
+| Logistic Regression|0.7882655490999143|0.7944444444444444|
+
 
 
 # Evaluation
@@ -123,9 +169,27 @@ Model yang digunakan adalah model regressi, sesuai penjelasan diatas saya akan m
 1. Mean Squared Error (MSE)
 2. Root Mean Squared Error (RMSE)
 3. Confussion Matrix
+    Menghitung hasil kinerja klasifikasi dari masing-masing pengujian metode dengan Confusion Matrix untuk memperoleh hasil Accuracy, Precision, dan Recall. Confusion Matrixidigunakan untuk imenganalisisiseberapa baik classifier mengenali data kelas yang berbeda[7]
 
 ## Mean Squared Error (MSE)
 ## Root Mean Squared Error (RMSE)
 ## Confussion Matrix
 
 
+# Final Report
+
+|Index|	Model_Name|	mse     |  	r2        |	rmse     |
+|-----|-----------|---------|-------------|----------|
+0     |	knn	      |0.0388889|	0.7855660 |	0.1972027|
+1     |	RF	      |0.0097778|	0.9460852 |	0.0988826|
+2     |	LR	      |0.2160000|	-0.1910276|	0.4647580|
+
+# Daftar Refrensi
+### Referensi
+[1] Umri Erdiansyah, Ahmadi Irmansyah Lubis, Kamil Erwansyah. 2022. [Komparasi Metode K-Nearest Neighbor dan Random Forest Dalam Prediksi Akurasi Klasifikasi Pengobatan Penyakit Kutil](http://ejurnal.stmik-budidarma.ac.id/index.php/mib/article/download/3373/2390) . JURNAL MEDIA INFORMATIKA BUDIDARMA. 6O(1):208-214 
+
+[2] 
+
+[3]
+
+[4]
