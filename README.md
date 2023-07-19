@@ -50,14 +50,14 @@ Overview Data :
 
 |Parameters|satisfaction_level | last_evaluation| number_project | average_montly_hours | time_spend_company| work_accident| left         |promotion_last_5years |
 |----------|-------------------|----------------|----------------|----------------------|-------------------|--------------|--------------|----------------------|
-|count     |1361.000000        |1361.000000     |1361.000000     |1361.000000           |1361.000000        |1361.000000   |1361.000000   |1361.000000           |
-|mean      |2.285680           |2.234511        |2.396873        |2.225170              |2.178511           |2.329126      |2.382822      |                      |
-|std       |0.859028           |0.843815        |0.883311        |0.850143              |0.835549           |0.876739      |0.882107      |                      |
-|min       |0.949000           |0.926000        |1.039000        |0.907000              |0.885000           |0.974000      |1.008000      |                      |
-|25%       |1.461000           |1.433000        |1.550000        |1.421000              |1.393000           |1.489000      |1.517000      |                      |
-|50%       |2.326000           |2.251000        |2.458000        |2.237000              |2.175000           |2.367000      |2.481000      |                      |
-|75%       |2.903000           |2.825000        |3.060000        |2.828000              |2.765000           |2.976000      |3.033000      |                      |
-|max       |4.165000           |4.102000        |4.301000        |4.114000              |4.054000           |4.247000      |4.229000      |                      |
+count      |14999.000000	   |14999.000000	|14999.000000	 |14999.000000	        |14999.000000	    |14999.000000  |14999.000000  |14999.000000          |
+mean	   |0.612834	       |0.716102	    |3.803054	     |201.050337	        |3.498233        	|0.144610	   |0.238083	  |0.021268              |
+std	       |0.248631	       |0.171169	    |1.232592	     |49.943099	            |1.460136	        |0.351719	   |0.425924	  |0.144281              |
+min	       |0.090000	       |0.360000	    |2.000000	     |96.000000	            |2.000000	        |0.000000	   |0.000000	  |0.000000              |
+25%	       |0.440000	       |0.560000	    |3.000000	     |156.000000	        |3.000000	        |0.000000	   |0.000000	  |0.000000              |
+50%	       |0.640000	       |0.720000	    |4.000000	     |200.000000	        |3.000000	        |0.000000	   |0.000000	  |0.000000              |
+75%	       |0.820000	       |0.870000	    |5.000000	     |245.000000	        |4.000000	        |0.000000	   |0.000000	  |0.000000              |
+max	       |1.000000	       |1.000000	    |7.000000	     |310.000000	        |10.000000	        |1.000000	   |1.000000	  |1.000000              |
 
 * hasil analisis:
   - data terdiri dari 14999 baris dan 10 colom
@@ -67,6 +67,19 @@ Overview Data :
   - jumlah waktu bekerja dari 2 sampai 10 jam
 
 # Visualisasi
-Gambar 1 adalah grafik plot chart untuk korelasi left
+Gambar 1 adalah grafik distribusi antara statisfaction level dan salary terhadap left 
+![image](https://github.com/sharung/Predictive_Analysis_ML_Terapan/assets/76006507/f6f13265-12f3-483e-bf6d-35cb2cc18930)
+gambar 1 grafik distribusi
+
+    - satisfaction by salary untuk menampilkan distribusi antara satisfaction level dan salary
+    - salary history membuat perbandingan antara pegawai yang bertahan dan tidak
 
 Gambar 2 adalah salary histogram dari data karyawan left
+![image](https://github.com/sharung/Predictive_Analysis_ML_Terapan/assets/76006507/dc5e07a6-8f64-456c-8058-63c033664c3f)
+Gambar 2 salary histogram
+
+dari gambar di atas dapat dilihat bahwa "last_evaluation" tidak ada korelasi dengan left
+
+# Data Preparation
+
+
