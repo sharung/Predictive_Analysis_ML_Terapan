@@ -102,7 +102,7 @@ dari gambar di atas dapat dilihat bahwa "last_evaluation" tidak ada korelasi den
 
 
 # Modeling
-Model yang akan digunakan ada 3 algoritma yaitu K-Nearest Neighbors dan Random Forest. 2 algoritma tersebut akan dievaluasi performa di tahap evaluation untuk menentukan model terbaik.
+Model yang akan digunakan ada 2 algoritma yaitu K-Nearest Neighbors dan Random Forest. 2 algoritma tersebut akan dievaluasi performa di tahap evaluation untuk menentukan model terbaik.
    
     
 ### Models
@@ -118,3 +118,14 @@ Table 3. Hasil Model
 
 
 # Evaluation
+Model yang digunakan adalah model regressi, sesuai penjelasan diatas saya akan menggunakan beberapa metric untuk evaluasi, berikut adalah list nya:
+
+1. Mean Squared Error (MSE)
+2. Root Mean Squared Error (RMSE)
+3. Confussion Matrix
+
+## Mean Squared Error (MSE)
+## Root Mean Squared Error (RMSE)
+## Confussion Matrix
+
+
