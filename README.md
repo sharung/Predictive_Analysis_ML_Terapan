@@ -46,7 +46,7 @@ Overview Data :
     - Link : https://www.kaggle.com/datasets/mfaisalqureshi/hr-analytics-and-job-prediction
     - License : CC0: Public Domain
 
-# Predictiv analysis
+# Analisis Predictive
 
 |Parameters|satisfaction_level | last_evaluation| number_project | average_montly_hours | time_spend_company| work_accident| left         |promotion_last_5years |
 |----------|-------------------|----------------|----------------|----------------------|-------------------|--------------|--------------|----------------------|
@@ -58,3 +58,15 @@ Overview Data :
 |50%       |2.326000           |2.251000        |2.458000        |2.237000              |2.175000           |2.367000      |2.481000      |                      |
 |75%       |2.903000           |2.825000        |3.060000        |2.828000              |2.765000           |2.976000      |3.033000      |                      |
 |max       |4.165000           |4.102000        |4.301000        |4.114000              |4.054000           |4.247000      |4.229000      |                      |
+
+* hasil analisis:
+  - data terdiri dari 14999 baris dan 10 colom
+  - orang yang mengerajan projek paling sedikit 2 dan paling banyak 7
+  - rata-rata orang yang mengerjakan projek sebanyak 4 projek
+  - kecelakaan dalam bekerja hampir tidak pernah terjadi
+  - jumlah waktu bekerja dari 2 sampai 10 jam
+
+# Visualisasi
+Gambar 1 adalah grafik plot chart untuk korelasi left
+
+Gambar 2 adalah salary histogram dari data karyawan left
