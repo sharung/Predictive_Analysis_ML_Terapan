@@ -1,41 +1,41 @@
-# Laporan Proyek Mahine Leraning - Adam Pamungkas
+# Laporan Proyek _Machine Leraning_ - Adam Pamungkas
 ## Domain Proyek
 
-seorang karyawan merupakan salah satu faktor yang menentukan maju atau tidaknya suatu perusahaan, banyaknya pelamar pekerjaan membuat Human Resource (HR) menjadi salah satu pekerjaan yang harus pandai dalam memilih seseorang yang tepat.  
+Budaya kerja merupakan suatu pembeda atau ciri khas antara perusahaan satu dengan yang lainnya, bahkan banyak orang yang mencari pekerjaan dilihat dari budaya kerja yang diterapkan. semakin baik budaya kerja suatu perusahaan, maka semakin produktif karyawannya. ada beberapa karyawan yang juga tidak dapat mengikuti budaya bekerja yang berada di beberapa perusahaan, keluarnya seorang karyawan dapat menimnbulkan kekacauan kepada perusahaan jika keluarnya secara mendadak atau tidak direncanakan. maka tujuan utama penganalisaan terhadap kebiasaan karyawan diharapkan dapat membantu HR untuk mendapatkan prediksi terhadap karyawan yang ingin keluar.
 
-Budaya kerja merupakan suatu pembeda atau ciri khas antara perusahaan satu dengan yang lainnya, bahkan banyak orang yang mencari pekerjaan dilihat dari budaya kerja yang diterapkan. semakin baik budaya kerja suatu perusahaan, maka sekamin produktif karyawannya. ada beberapa karyawan yang juga tidak dapat mengikuti budaya bekerja yang berada di beberapa perusahaan.
-
-tujuan dalam menganalisis karyawan adalah untuk mengembangkan model prediksi yang dapat mengidentifikasi kebiasaan karyawan yang dapat membuat seorang karyawan memutuskan untuk keluar dari perusahaan.
-
-maka pembuatan model prediksi analysis karyawan diharapkan dapat meminimalisir karyawan yang keluar dari prilaku dan kebiasaan seorang karyawan
-
-# Busness Understanding
-
+# Business Understanding
 ## Problem Statement
-- Bagaimana cara menentukan alogritma Machine Learning yang baik untuk mengklafisikasi permasalahan karyawan?
-- Bagaimana penggunaan metode K-Nearest Neighbors, Random Forest, dan Logistic Regression?
+- Bagaimana cara menentukan alogritma _Machine Learning_ yang baik untuk mengklafisikasi permasalahan karyawan?
+- Bagaimana penggunaan metode _K-Nearest Neighbors_ dan _Random Forest_?
 
 ## Goals
 - Mengetahui algoritma machine learning yang baik dalam mengklasifikasi permasalahan karyawan
-- Menganalisis evaluasi metode K-Nearest Neighbors, Random Forest, dan Logistic Regression.
+- Menganalisis evaluasi metode _K-Nearest Neighbors_ dan _Random Forest_
+- Untuk mengetahui algoritma _machine learning_ yang baik digunakan dalam analisis karyawan bisa dengan menerapkan beberapa metode klasifikasi.
+- Untuk menganalisa perbandingan hasil evaluasi metode _K-Nearest Neighbors_ dan _Random Forest_ dapat dilakukan dengan mengamati metrik evaluasi seperti:
+     - _Train accuracy_
+     - _Test accuracy_
+     - _Confusion Matrix_
+     - _Mean Squared Error_ (MSE)
+     - _Root Mean Squared Error_ (RMSE)
+     - _R-Squared_ (R2)
 
 # Data Understanding
-Data yang digunakan adalah data yang berasal dari kaggle [<em> Hr Analytics Job Prediction</em>](https://www.kaggle.com/datasets/mfaisalqureshi/hr-analytics-and-job-prediction)
-, data ini berisikan dataset berisi transaksi yang dilakukan oleh HR Department to predict employees Behaviour pada tahun 2021.
+Data yang digunakan adalah data yang berasal dari kaggle *[<em> Hr Analytics Job Prediction</em>](https://www.kaggle.com/datasets/mfaisalqureshi/hr-analytics-and-job-prediction)* Dataset terdiri dari 14999 baris dan 10 colom. data ini berisikan dataset berisi kebiasaan seorang pegawai dalam pekerjaan yang dapat menyebabkan keluarnya seorang karyawan, dari dataset terdapat 3571 yang keluar dan 11428 yang masih bertahan. harapannya dari data yang kita peroleh dapat memprediksi seorang karyawan yang akan keluar atau berhenti bekerja. data berasal dari *HR Department to predict employees Behaviour* pada tahun 2021.
+
 ### Variable analysis karyawan
-* Left adalah target data yang merupakan tipe variabel Boolean dan hanya memiliki nilai yang mungkin: 0 berarti karyawan masih bekerja dengan perusahaan, 1 – karyawan keluar dari perusahaan.
-* satisfaction_level - Tingkat kepuasan kerja yang dilaporkan karyawan dalam skala dari 0 hingga 1
-* last_evaluation - Skor tinjauan kinerja terakhir karyawan juga diskalakan dari 0 hingga 1
-* number_project - Jumlah kontribusi karyawan proyek
-* average_monthly_hours - Jumlah rata-rata jam kerja karyawan per bulan
-* time_spend_company - Berapa lama karyawan telah bekerja di perusahaan (tahun)
-* Work_accident - Apakah karyawan mengalami kecelakaan saat bekerja atau tidak (0 – tidak, 1- ya)
-* promotion_last_5years - Apakah karyawan dipromosikan atau tidak dalam 5 tahun terakhir (0 – tidak, 1- ya)
-* Department - Departemen karyawan (nilai kategoris)
-* Salary - Gaji karyawan (categorical values – high, medium, low)
+* _Left_ adalah target data yang merupakan tipe variabel Boolean dan hanya memiliki nilai yang mungkin: 0 berarti karyawan masih bekerja dengan perusahaan, 1 – karyawan keluar dari perusahaan.
+* _satisfaction_level_ - Tingkat kepuasan kerja yang dilaporkan karyawan dalam skala dari 0 hingga 1
+* _last_evaluation_ - Skor tinjauan kinerja terakhir karyawan juga diskalakan dari 0 hingga 1
+* _number_project_ - Jumlah kontribusi karyawan proyek
+* _average_monthly_hours_ - Jumlah rata-rata jam kerja karyawan per bulan
+* _time_spend_company_ - Berapa lama karyawan telah bekerja di perusahaan (tahun)
+* _Work_accident_ - Apakah karyawan mengalami kecelakaan saat bekerja atau tidak (0 – tidak, 1- ya)
+* _promotion_last_5years_ - Apakah karyawan dipromosikan atau tidak dalam 5 tahun terakhir (0 – tidak, 1- ya)
+* _Department_ - Departemen karyawan (nilai kategoris)
+* _Salary_ - Gaji karyawan (categorical values – high, medium, low)
 
 ### Overview Data :
-    
     - Datasets Name : Hr Department to Predict Employees Behaviour 2021
     - Overall Columns:
         - Valid : 14999 
@@ -164,13 +164,13 @@ Table 3. Hasil Model
 # Evaluation
 Model yang digunakan adalah model regressi, sesuai penjelasan diatas saya akan menggunakan beberapa metric untuk evaluasi, berikut adalah list nya:
 
-## 1. Mean Squared Error (MSE)
+## Mean Squared Error (MSE)
    Mean Squared Error (MSE) adalah Rata-rata Kesalahan kuadrat diantara nilai aktual dan nilai prediksi. Metode Mean Squared Error secara umum digunakan untuk mengecek estimasi berapa nilai kesalahan pada prediksi. Nilai Mean Squared Error yang rendah atau nilai mean squared error mendekati nol menunjukkan bahwa hasil prediksi sesuai dengan data aktual dan bisa dijadikan untuk perhitungan prediksi di periode mendatang.
    
-## 2. Root Mean Squared Error (RMSE)
+## Root Mean Squared Error (RMSE)
    Root Mean Squared Error (RMSE) adalah salah satu cara untuk mengevaluasi model regresi dengan mengukur tingkat akurasi hasil perkiraan suatu model. RMSE dihitung dengan mengkuadratkan error (prediksi – observasi) dibagi dengan jumlah data (= rata-rata), lalu diakarkan.
    
-## 3. Confussion Matrix
+## Confussion Matrix
     Menghitung hasil kinerja klasifikasi dari masing-masing pengujian metode dengan Confusion Matrix untuk memperoleh hasil Accuracy, Precision, dan Recall. Confusion Matrixidigunakan untuk imenganalisisiseberapa baik classifier mengenali data kelas yang berbeda[7]
 
 # Final Report
