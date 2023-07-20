@@ -84,17 +84,7 @@ max	       |1.000000	       |1.000000	    |7.000000	     |310.000000	        |10
   - rata-rata orang yang mengerjakan projek sebanyak 4 projek
   - kecelakaan dalam bekerja hampir tidak pernah terjadi
   - jumlah waktu bekerja dari 2 sampai 10 jam
- 
-Untuk train test tplit kita bisa menggunakan potongan kode berikut:
-
-```
-from sklearn.model_selection import train_test_split
-
-x = hr_dummy.drop(columns=['left'])
-y = hr_dummy.left
-
-x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.3, random_state= 50)
-```
+    
 
 ### Visualisasi
 Gambar 1 adalah grafik distribusi antara _statisfaction level_ dan _salary_ terhadap _left_
@@ -117,7 +107,7 @@ Model yang akan digunakan ada 2 algoritma yaitu K-Nearest Neighbors dan Random F
     
 ### Models
 1. KNN
-    Algoritma*K-Nearest Neighbor* adalah metode*klasifikasi* terhadap suatu dataset berdasarkan jarak data pembelajaran (*neighbor*) terdekat. Jauh 
+    Algoritma*K-Nearest Neighbor* adalah metode *klasifikasi* terhadap suatu dataset berdasarkan jarak data pembelajaran (*neighbor*) terdekat. Jauh 
 maupun dekatnya data pembelajaran (*neighbor*) tersebut dihitung dengan jarak Euclidean. [2]
     * Kelebihan KNN
         * Mudah diterapkan
@@ -132,14 +122,14 @@ maupun dekatnya data pembelajaran (*neighbor*) tersebut dihitung dengan jarak Eu
         n_neighbors = 7
         
               
-2. Random Forest  adalah algoritma machine learning yang menggabungkan keluaran dari beberapa decision tree untuk mencapai satu hasil. [1]
-    * Kelebihan Algoritma Random Forest
+2. _Random Forest_  adalah algoritma *machine learning* yang menggabungkan keluaran dari beberapa _decision tree_ untuk mencapai satu hasil. [1]
+    * Kelebihan Algoritma _Random Forest_
         - Kuat terhadap data outlier (pencilan data).
         - Bekerja dengan baik dengan data non-linear.
         - Risiko overfitting lebih rendah.
         - Berjalan secara efisien pada kumpulan data yang besar.
         - Akurasi yang lebih baik daripada algoritma klasifikasi lainnya.
-   * Kekurangan Algoritma Random Forest
+   * Kekurangan Algoritma _Random Forest_
         - Random Forest cenderung bias saat berhadapan dengan variabel kategorikal.
         - Waktu komputasi pada dataset berskala besar relatif lambat
         - Tidak cocok untuk metode linier dengan banyak fitur sparse
@@ -147,7 +137,7 @@ maupun dekatnya data pembelajaran (*neighbor*) tersebut dihitung dengan jarak Eu
         * n_estimator = 100
         * max_depth = Infinite / None (node diperluas sampai semua semua daun kurang dari sampel)
         * n_jobs = -1
-    * Algoritma Random Forest:
+    * Algoritma _Random Forest_:
       ![image](https://github.com/sharung/Predictive_Analysis_ML_Terapan/assets/76006507/7f561ecb-e0bd-4a41-a91d-fcf2138508c5)
 
 
@@ -162,19 +152,30 @@ Table 3. Hasil Model
 
 
 # Evaluation
-Model yang digunakan adalah model regressi, sesuai penjelasan diatas saya akan menggunakan beberapa metric untuk evaluasi, berikut adalah list nya:
 
 ## Mean Squared Error (MSE)
-   Mean Squared Error (MSE) adalah Rata-rata Kesalahan kuadrat diantara nilai aktual dan nilai prediksi. Metode Mean Squared Error secara umum digunakan untuk mengecek estimasi berapa nilai kesalahan pada prediksi. Nilai Mean Squared Error yang rendah atau nilai mean squared error mendekati nol menunjukkan bahwa hasil prediksi sesuai dengan data aktual dan bisa dijadikan untuk perhitungan prediksi di periode mendatang.
+   *Mean Squared Error* (MSE) adalah Rata-rata Kesalahan kuadrat diantara nilai aktual dan nilai prediksi. Metode Mean Squared Error secara umum digunakan untuk mengecek estimasi berapa nilai kesalahan pada prediksi. Nilai Mean Squared Error yang rendah atau nilai mean squared error mendekati nol menunjukkan bahwa hasil prediksi sesuai dengan data aktual dan bisa dijadikan untuk perhitungan prediksi di periode mendatang.
    
 ## Root Mean Squared Error (RMSE)
-   Root Mean Squared Error (RMSE) adalah salah satu cara untuk mengevaluasi model regresi dengan mengukur tingkat akurasi hasil perkiraan suatu model. RMSE dihitung dengan mengkuadratkan error (prediksi – observasi) dibagi dengan jumlah data (= rata-rata), lalu diakarkan.
-   
+   _Root Mean Squared Error_ (RMSE) adalah salah satu cara untuk mengevaluasi model regresi dengan mengukur tingkat akurasi hasil perkiraan suatu model. RMSE dihitung dengan mengkuadratkan error (prediksi – observasi) dibagi dengan jumlah data (= rata-rata), lalu diakarkan.
+
+## R-Squared (R2)
+R2 (R-squared), juga dikenal sebagai koefisien determinasi, adalah ukuran statistik yang digunakan untuk mengukur seberapa baik model regresi cocok dengan data yang diamati. R2 menggambarkan proporsi variabilitas dalam variabel dependen yang dapat dijelaskan oleh variabel independen dalam model regresi. Nilai R2 berkisar antara 0 hingga 1, di mana nilai 0 menunjukkan bahwa model tidak dapat menjelaskan variabilitas sama sekali, dan nilai 1 menunjukkan bahwa model dapat menjelaskan seluruh variabilitas.
+
+Rumus R2 dapat dituliskan sebagai berikut:
+
+R2 = 1 - (SSR / SST)
+
+di mana:
+- SSR (_Sum of Squared Residuals_) adalah jumlah kuadrat selisih antara nilai prediksi model dan nilai aktual dari variabel dependen.
+- SST (_Total Sum of Squares_) adalah jumlah kuadrat selisih antara setiap nilai aktual dan nilai rata-rata dari variabel dependen.
+
+
 ## Confussion Matrix
-    Menghitung hasil kinerja klasifikasi dari masing-masing pengujian metode dengan Confusion Matrix untuk memperoleh hasil Accuracy, Precision, dan Recall. Confusion Matrixidigunakan untuk imenganalisisiseberapa baik classifier mengenali data kelas yang berbeda[7]
+ Menghitung hasil kinerja klasifikasi dari masing-masing pengujian metode dengan _Confusion Matrix_ untuk memperoleh hasil *Accuracy, Precision,* dan *Recall*. *Confusion Matrixi* digunakan untuk menganalisisise berapa baik classifier mengenali data kelas yang berbeda.
 
 # Final Report
-Setelah melalui berbagai tahapan evaluasi diputuskan bahwa model terbaik yang akan digunakan adalah Gradient Boostinf sesuai dengan perhitungan matrix yang telah dijabarkan diatas. Berikut hasil akhir dari 2 Model terbaik.
+Setelah melalui berbagai tahapan evaluasi diputuskan bahwa model terbaik yang akan digunakan adalah _Random Forest_ sesuai dengan perhitungan matrix yang telah dijabarkan diatas. Berikut hasil akhir dari 2 Model terbaik.
 
 Table 4. Final Result
 
@@ -183,7 +184,7 @@ Table 4. Final Result
 0     |	knn	      |0.0388889|	0.7855660 |	0.1972027|
 1     |	RF	      |0.0097778|	0.9460852 |	0.0988826|
 
-Dari hasil perbandingan antara 2 algoritma machine learning tersebut, dapat diambil kesimpulan bahwa algoritma yang baik untuk melakukan analisis karyawan ini adalah Random Forest. langkah-langkah ini diharapkan dapat memperkecil tingkat minat keluarnya seorang karyawan.
+Dari hasil perbandingan antara 2 algoritma machine learning tersebut, dapat diambil kesimpulan bahwa algoritma yang baik untuk melakukan analisis karyawan ini adalah _Random Forest_. langkah-langkah ini diharapkan dapat memperkecil tingkat minat keluarnya seorang karyawan.
 
 # Daftar Refrensi
 ### Referensi
